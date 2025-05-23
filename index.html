@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BOXCARS - Find Your Perfect Car</title>
   <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
@@ -29,76 +30,202 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <small>Find cars for sale and for rent near you</small>
-      <h1>Find Your Perfect Car</h1>
-
-      <div class="search-tabs">
-        <div class="tab active">All</div>
-        <div class="tab">New</div>
-        <div class="tab">Used</div>
-      </div>
-      
-
-      <div class="car-search">
-        <select class="search-input"><option>Any Makes</option></select>
-        <select class="search-input"><option>Any Model</option></select>
-        <select class="search-input"><option>Prices:</option></select>
-        <button class="search-button">Search Cars</button>
-      </div>
-      <div class="car-options">
-        <small>or Browse Featured Model</small>
-      </div>
-
-      <div class="features">
-        <div class="feature">SUV</div>
-        <div class="feature">Sedan</div>
-        <div class="feature">Hatchback</div>
-        <div class="feature">Coupe</div>
-        <div class="feature">Hybrid</div>
-      </div>
+      <div class="hero-section">
+        <div class="top-text">Find cars for sale and for rent near you</div>
+        
+        <h1 class="main-heading">Find Your Perfect Car</h1>
+        
+        <div class="tab-navigation">
+            <button class="tab-btn active">All</button>
+            <button class="tab-btn">New</button>
+            <button class="tab-btn">Used</button>
+        </div>
+        
+        <div class="search-container">
+            <select class="search-dropdown">
+                <option>Any Makes</option>
+                <option>Toyota</option>
+                <option>Honda</option>
+                <option>BMW</option>
+                <option>Mercedes</option>
+            </select>
+            
+            <select class="search-dropdown">
+                <option>Any Models</option>
+                <option>Camry</option>
+                <option>Accord</option>
+                <option>3 Series</option>
+                <option>C-Class</option>
+            </select>
+            
+            <span class="price-label">Prices:</span>
+            
+            <select class="search-dropdown">
+                <option>All Prices</option>
+                <option>Under $20,000</option>
+                <option>$20,000 - $40,000</option>
+                <option>$40,000 - $60,000</option>
+                <option>Over $60,000</option>
+            </select>
+            
+            <button class="search-btn">
+                <span>🔍</span>
+                Search Cars
+            </button>
+        </div>
+        
+        <div class="browse-text">Or Browse Featured Model</div>
+        
+        <div class="category-buttons">
+            <button class="category-btn">
+                <span>🚗</span>
+                SUV
+            </button>
+            <button class="category-btn">
+                <span>🚙</span>
+                Sedan
+            </button>
+            <button class="category-btn">
+                <span>🚗</span>
+                Hatchback
+            </button>
+            <button class="category-btn">
+                <span>🏎️</span>
+                Coupe
+            </button>
+            <button class="category-btn">
+                <span>🔋</span>
+                Hybrid
+            </button>
+        </div>
+        
+        <div class="car-image"></div>
     </div>
-  </section>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Category button interactions
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Search button functionality
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            // Add search functionality here
+            console.log('Search clicked');
+        });
+    </script>
 </body>
 </html>
 
 
   <!-- Brands Section -->
-  <section class="brands-section">
-    <div class="container">
-      <div class="brands-header">
-        <h2 class="section-title">Explore Our Premium Brands</h2>
-        <a class="view-all" href="#">Show All Brands →</a>
-      </div>
-      <div class="brands-grid">
-        <div class="brand-card">
-          <img alt="Audi" class="brand-logo" src="Audi logo.jpeg"/>
-          <span class="brand-name">Audi</span>
+<section class="brands-section">
+  <div class="container">
+    <div class="brands-header">
+      <h2 class="section-title">Explore Our Premium Brands</h2>
+      <a class="view-all" href="#" id="showAllBrands">Show All Brands →</a>
+    </div>
+
+    <div class="brands-swiper-container">
+      <div class="swiper" id="brandsSwiper">
+        <div class="swiper-wrapper">
+          <!-- Each brand is a swiper-slide -->
+          <div class="swiper-slide brand-card">
+            <img alt="Audi" class="brand-logo" src="Audi logo.jpeg" />
+            <span class="brand-name">Audi</span>
+          </div>
+          <div class="swiper-slide brand-card">
+            <img alt="BMW" class="brand-logo" src="BMW logo.jpeg" />
+            <span class="brand-name">BMW</span>
+          </div>
+          <div class="swiper-slide brand-card">
+            <img alt="Ford" class="brand-logo" src="Ford logo.jpeg" />
+            <span class="brand-name">Ford</span>
+          </div>
+          <div class="swiper-slide brand-card">
+            <img alt="Mercedes" class="brand-logo" src="Mercedes Logo.jpeg" />
+            <span class="brand-name">Benz</span>
+          </div>
+          <div class="swiper-slide brand-card">
+            <img alt="Peugeot" class="brand-logo" src="peugeot logo.jpeg" />
+            <span class="brand-name">Peugeot</span>
+          </div>
+          <div class="swiper-slide brand-card">
+            <img alt="Volkswagen" class="brand-logo" src="Volkswagen logo.jpeg" />
+            <span class="brand-name">Volkswagen</span>
+          </div>
+          <div class="swiper-slide brand-card hidden-brand">
+            <img alt="Toyota" class="brand-logo" src="Toyota Logo.png" />
+            <span class="brand-name">Toyota</span>
+          </div>
+          <div class="swiper-slide brand-card hidden-brand">
+            <img alt="Honda" class="brand-logo" src="Honda Logo.png" />
+            <span class="brand-name">Honda</span>
+          </div>
+          <div class="swiper-slide brand-card hidden-brand">
+            <img alt="Nissan" class="brand-logo" src="Nissan logo.jpeg" />
+            <span class="brand-name">Nissan</span>
+          </div>
         </div>
-        <div class="brand-card">
-          <img alt="BMW" class="brand-logo" src="BMW logo.jpeg"/>
-          <span class="brand-name">BMW</span>
-        </div>
-        <div class="brand-card">
-          <img alt="Ford" class="brand-logo" src="Ford logo.jpeg"/>
-          <span class="brand-name">Ford</span>
-        </div>
-        <div class="brand-card">
-          <img alt="Mercedes" class="brand-logo" src="Mercedes Logo.jpeg"/>
-          <span class="brand-name">Mercedes Benz</span>
-        </div>
-        <div class="brand-card">
-          <img alt="Peugeot" class="brand-logo" src="peugeot logo.jpeg"/>
-          <span class="brand-name">Peugeot</span>
-        </div>
-        <div class="brand-card">
-          <img alt="Volkswagen" class="brand-logo" src="Volkswagen logo.jpeg"/>
-          <span class="brand-name">Volkswagen</span>
-        </div>
+
+        <!-- Navigation & Pagination (Optional) -->
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('#brandsSwiper', {
+    slidesPerView: 6,
+    spaceBetween: 20,
+    autoplay:{
+      Delay:2000,
+      diasableOnInteraction:false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    allowTouchMove: true,
+    breakpoints: {
+      768: { slidesPerView: 4 },
+      480: { slidesPerView: 2 },
+    },
+  });
+
+  const showAllBtn = document.getElementById("showAllBrands");
+  let isExpanded = false;
+
+  showAllBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    const hiddenBrands = document.querySelectorAll(".hidden-brand");
+
+    hiddenBrands.forEach((card) => {
+      card.classList.toggle("visible");
+    });
+
+    isExpanded = !isExpanded;
+    showAllBtn.textContent = isExpanded ? "← Show Less Brands" : "Show All Brands →";
+  });
+</script>
+
 
   <!-- Vehicles Section -->
   <section class="vehicles-section">
@@ -250,114 +377,90 @@
 
 <!-- Popular Makes Section -->
 <section class="popular-makes">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Popular Makes</h2>
-      <a href="#" class="view-all">View All →</a>
+  <h2>Popular Makes</h2>
+  <div class="makes-tabs">
+    <button>Audi</button>
+    <button>Ford</button>
+    <button>Mercedes Benz</button>
+    <a href="#">View All →</a>
+  </div>
+
+  <div class="car-cards">
+    <div class="car-card">
+      <div class="car-image">
+        <span class="sale-tag">Sale</span>
+        <img src="Audi q7.jpg" alt="Audi Q7 2023" />
+        <button class="wishlist">♡</button>
+      </div>
+      <div class="car-info">
+        <h3>Audi Q7 – 2023</h3>
+        <p>2.0 TDI PowerPulse Momentum 5dr AWD</p>
+        <ul>
+          <li>500 Miles</li>
+          <li>Petrol</li>
+          <li>Automatic</li>
+        </ul>
+        <div class="price">
+          <span class="old-price">$50,000</span>
+          <span class="new-price">$45,000</span>
+        </div>
+        <a href="#" class="details-link">View Details →</a>
+      </div>
     </div>
-    <div class="makes-tabs">
-      <button class="tab-button active">Audi</button>
-      <button class="tab-button">Ford</button>
-      <button class="tab-button">Mercedes Benz</button>
+    <div class="car-card">
+      <div class="car-image">
+        <span class="sale-tag">Sale</span>
+        <img src="Audi a5.jpg" alt="Audi A5 2023" />
+        <button class="wishlist">♡</button>
+      </div>
+      <div class="car-info">
+        <h3>Audi A5 – 2023</h3>
+        <p>2.0 TDI PowerPulse Momentum 5dr AWD</p>
+        <ul>
+          <li>500 Miles</li>
+          <li>Petrol</li>
+          <li>Automatic</li>
+        </ul>
+        <div class="price">
+          <span class="old-price">$50,000</span>
+          <span class="new-price">$45,000</span>
+        </div>
+        <a href="#" class="details-link">View Details →</a>
+      </div>
     </div>
-
-    <div class="car-listings-scroll">
-      <div class="car-card">
-        <div class="car-image-container">
-          <img src="Audi a5.jpg" alt="Audi A5 – 2023" class="car-image" />
-          <span class="sale-badge">Sale</span>
-          <button class="favorite-button">♥</button>
-        </div>
-        <div class="car-details">
-          <h3 class="car-title">Audi A5 – 2023</h3>
-          <p class="car-subtitle">2.0 TDI Momentum Sdr AWD</p>
-          <div class="car-features">
-            <div class="car-feature">📍 500 Miles</div>
-            <div class="car-feature">⛽ Petrol</div>
-            <div class="car-feature">⚙️ Automatic</div>
-          </div>
-          <div class="car-pricing">
-            <div class="price-info">
-              <p class="original-price">$50,000</p>
-              <p class="sale-price">$45,000</p>
-            </div>
-            <a href="#" class="view-details-btn">View Details →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="car-card">
-        <div class="car-image-container">
-          <img src="Audi a4.webp" alt="Audi A4 – 2022" class="car-image" />
-          <span class="sale-badge">Sale</span>
-          <button class="favorite-button">♥</button>
-        </div>
-        <div class="car-details">
-          <h3 class="car-title">Audi A4 – 2022</h3>
-          <p class="car-subtitle">2.0 TDI Momentum 3dr AWD</p>
-          <div class="car-features">
-            <div class="car-feature">📍 150 Miles</div>
-            <div class="car-feature">⛽ Diesel</div>
-            <div class="car-feature">⚙️ CVT</div>
-          </div>
-          <div class="car-pricing">
-            <div class="price-info">
-              <p class="sale-price">$120,000</p>
-            </div>
-            <a href="#" class="view-details-btn">View Details →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="car-card">
-        <div class="car-image-container">
-          <img src="Audi a4.webp" alt="Audi A4 – 2022" class="car-image" />
-          <span class="sale-badge">Sale</span>
-          <button class="favorite-button">♥</button>
-        </div>
-        <div class="car-details">
-          <h3 class="car-title">Audi A4 – 2022</h3>
-          <p class="car-subtitle">2.0 TDI Momentum 3dr AWD</p>
-          <div class="car-features">
-            <div class="car-feature">📍 150 Miles</div>
-            <div class="car-feature">⛽ Diesel</div>
-            <div class="car-feature">⚙️ CVT</div>
-          </div>
-          <div class="car-pricing">
-            <div class="price-info">
-              <p class="sale-price">$120,000</p>
-            </div>
-            <a href="#" class="view-details-btn">View Details →</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="car-card">
-        <div class="car-image-container">
-          <img src="BMW X5 Gold.jpg" alt="BMW-2024" class="car-image" />
-          <span class="sale-badge">Sale</span>
-          <button class="favorite-button">♥</button>
-        </div>
-        <div class="car-details">
-          <h3 class="car-title">BMW-2024</h3>
-          <p class="car-subtitle">2.0 TDI Momentum 3dr AWD</p>
-          <div class="car-features">
-            <div class="car-feature">📍 250 Miles</div>
-            <div class="car-feature">⛽ Diesel</div>
-            <div class="car-feature">⚙️ CVT</div>
-          </div>
-          <div class="car-pricing">
-            <div class="price-info">
-              <p class="sale-price">$300,000</p>
-            </div>
-            <a href="#" class="view-details-btn">View Details →</a>
-          </div>
-        </div>
-      </div>
-
   </div>
 </section>
+
+
+    <script>
+        // Brand tab functionality
+        document.querySelectorAll('.brand-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.brand-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Navigation arrows
+        document.querySelector('.prev').addEventListener('click', function() {
+            // Add previous navigation logic
+            console.log('Previous clicked');
+        });
+
+        document.querySelector('.next').addEventListener('click', function() {
+            // Add next navigation logic
+            console.log('Next clicked');
+        });
+
+        // Wishlist functionality
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const heart = this.querySelector('span');
+                heart.textContent = this.classList.contains('active') ? '♥' : '♡';
+            });
+        });
+    </script>
 
 <!-- Shop BoxCar Your Way Section -->
 <section class="browse-section">
