@@ -365,231 +365,436 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(14, 11, 11, 0.1);
   top: 50%;
   transform: translateY(-50%);
 }
+.swiper-wrapper{
+  animation:scroll 6s linear infinite;
+  will-change: transform;
+}
+      @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+      }
 /* Vehicles Section */
+
 .vehicles-section {
-  padding: 60px 0;
-  background-color: #f9fafb;
+    padding: 60px 0;
+    background-color: #f9fafb;
 }
 
 .vehicles-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .vehicle-tabs {
-  display: flex;
-  gap: 20px;
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 30px;
 }
 
 .vehicle-tab {
-  padding: 10px 15px;
-  font-weight: 500;
-  color: #6B7280;
-  cursor: pointer;
-  position: relative;
+    padding: 10px 15px;
+    font-weight: 500;
+    color: #6B7280;
+    cursor: pointer;
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 16px;
 }
 
 .vehicle-tab.active {
-  color: #4F46E5;
+    color: #4F46E5;
 }
 
 .vehicle-tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #4F46E5;
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4F46E5;
 }
 
 .vehicles-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
 }
 
 .vehicle-card {
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .vehicle-image {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .vehicle-label {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #10B981;
-  color: #fff;
-  font-size: 15px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-weight: 500;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vehicle-label.great-price {
+    background-color: #10B981;
+}
+
+.vehicle-label.low-mileage {
+    background-color: #3B82F6;
+}
+
+.bookmark-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.bookmark-icon:hover {
+    background-color: #fff;
+}
+
+.bookmark-icon i {
+    font-size: 14px;
+    color: #6B7280;
 }
 
 .vehicle-details {
-  padding: 0px;
+    padding: 20px;
+}
+
+.vehicle-title-section {
+    margin-bottom: 16px;
 }
 
 .vehicle-title {
-  font-size: 5px;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
 }
 
-.vehicle-year {
-  color: #6B7280;
-  font-weight: normal;
+.vehicle-subtitle {
+    font-size: 14px;
+    color: #6B7280;
+    font-weight: 400;
 }
 
 .vehicle-specs {
-  color: #6B7280;
-  font-size: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.spec-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.spec-icon i {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.spec-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.spec-label {
+    font-size: 11px;
+    color: #6B7280;
+    text-transform: capitalize;
+}
+
+.vehicle-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .vehicle-price {
-  font-size: 15px;
-  font-weight: 700;
-  color: #111827;
-  margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
 }
 
 .view-details {
-  display: inline-block;
-  color: #4F46E5;
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: 10px;
-  margin-bottom: 10px;;
+    color: #4F46E5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
 }
 
+.view-details:hover {
+    color: #3730A3;
+}
+
+.view-details i {
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .vehicles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+    }
+    
+    .vehicle-specs {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .spec-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .spec-icon {
+        margin-right: 12px;
+        margin-bottom: 0;
+    }
+}
 /* Sell Section */
 .sell-section {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 .sell-card {
-  display: flex;
-  width: 100%;
-  max-width: 1200px;
-  background-color: #f2f6ff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f2f6ff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .sell-image-box {
-  position: relative;
-  width: 48%;
+    position: relative;
+    width: 48%;
 }
 
-.sell-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.sell-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sell-video::-webkit-media-controls {
+    display: none !important;
+}
+
+.sell-video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.sell-video::-webkit-media-controls-panel {
+    display: none !important;
 }
 
 .play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background-color: black;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    opacity: 1;
+}
+
+.play-button svg {
+    margin-left: 4px;
+}
+
+.play-button svg path {
+    fill: white;
+}
+
+.play-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: white;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Hide pause button when video is playing and not hovering */
+.sell-image-box:not(:hover) .play-button.playing {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Show pause button when hovering over video area while playing */
+.sell-image-box:hover .play-button.playing {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Always show play button when video is paused */
+.play-button.paused {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.play-icon, .pause-icon {
+    transition: opacity 0.2s ease;
+}
+
+.play-icon.hidden, .pause-icon.hidden {
+    opacity: 0;
+    position: absolute;
 }
 
 .sell-text-box {
-  width: 52%;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 52%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sell-text-box h1 {
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 16px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 16px;
 }
 
 .sell-description {
-  font-size: 10px;
-  color: #444;
-  margin-bottom: 20px;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
 }
 
 .benefits-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 30px;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
 }
 
 .benefits-list li {
-  font-size: 12px;
-  color: #333;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
 }
 
 .benefits-list .dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: #4461F2;
-  border-radius: 50%;
-  margin-right: 10px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #4461F2;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .get-started-button {
-  background-color: #4461F2;
-  color: white;
-  font-size: 10px;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: fit-content;
+    background-color: #4461F2;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
 }
 
 .get-started-button:hover {
-  background-color: #3550d8;
+    background-color: #3550d8;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sell-card {
+        flex-direction: column;
+    }
+    
+    .sell-image-box,
+    .sell-text-box {
+        width: 100%;
+    }
+    
+    .sell-text-box {
+        padding: 30px;
+    }
+}
 /* Stats Section */
 .stats-section {
   padding: 20px 0;
@@ -635,17 +840,18 @@ header {
   justify-content: space-between;
   gap: 10px;
   flex-wrap: nowrap;
+  margin-top: 20px;
 }
 
 .feature-item {
   flex: 1;
-  min-width: 0;
+  min-width: 200px;
   text-align: center;
   padding: 0 5px;
 }
 
 .feature-icon {
-  margin-top: 20px;
+  margin-top: 40px;
   font-size: 20px;
   background: rgba(68, 97, 242, 0.1);
   color: #4461F2;
@@ -831,22 +1037,22 @@ header {
 }
 
 .view-more {
-  font-size: 10px;
+  font-size: 14px;
   color: #333;
   text-decoration: none;
 }
 
 .browse-tabs {
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 120px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e0e0e0;
   overflow-x: auto;
 }
 
 .browse-tab {
-  font-size: 10px;
+  font-size: 14px;
   background: none;
   border: none;
   color: #888;
@@ -861,13 +1067,13 @@ header {
 
 .browse-grid {
   display: grid;
-  justify-content: space-around;
+  justify-content:space-evenly;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 40px;
 }
 
 .browse-column a {
-  font-size: 10px;
+  font-size: 12px;
   color: #555;
   text-decoration: none;
   padding: 4px 0;
@@ -1242,8 +1448,9 @@ header {
 
 .column h4 {
   margin-bottom: 16px;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: DM sans-serif;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .column ul {
@@ -1251,6 +1458,7 @@ header {
   padding: 0;
   line-height: 2;
   font-size: 14px;
+  font-family: DM sans-serif;
 }
 
 .column ul li:hover {
@@ -1263,7 +1471,7 @@ header {
   margin-bottom: 10px;
   display: block;
   border-radius: 6px;
-  background-color: #fff;
+  background-color:transparent;
   padding: 5px;
 }
 

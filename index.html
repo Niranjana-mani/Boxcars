@@ -198,7 +198,7 @@
     slidesPerView: 6,
     spaceBetween: 20,
     autoplay:{
-      Delay:2000,
+      delay:1000,
       diasableOnInteraction:false,
     },
     navigation: {
@@ -229,100 +229,339 @@
 </script>
 
 
-  <!-- Vehicles Section -->
-  <section class="vehicles-section">
-    <div class="container">
-      <div class="vehicles-header">
-        <h2 class="section-title">Explore All Vehicles</h2>
-        <a class="view-all" href="#">View All →</a>
-      </div>
-      <div class="vehicle-tabs">
-        <div class="vehicle-tab active">In Stock</div>
-        <div class="vehicle-tab">New Cars</div>
-        <div class="vehicle-tab">Used Cars</div>
-      </div>
-      <div class="vehicles-grid">
-        <div class="vehicle-card">
-          <span class="vehicle-label">Great Price</span>
-          <img class="vehicle-image" src="Ford Transit.jpeg" alt="Ford Transit"/>
-          <div class="vehicle-details">
-            <div class="vehicle-title">Ford Transit <span class="vehicle-year">2021</span></div>
-            <div class="vehicle-specs">2000 Miles · Diesel · Manual</div>
-            <div class="vehicle-price">$22,000</div>
-            <a class="view-details" href="#">View Details →</a>
-          </div>
-        </div>
-        <div class="vehicle-card">
-          <span class="vehicle-label">Low Mileage</span>
-          <img class="vehicle-image" src="AMG GT.jpeg" alt="New GLC"/>
-          <div class="vehicle-details">
-            <div class="vehicle-title">New GLC <span class="vehicle-year">2023</span></div>
-            <div class="vehicle-specs">50 Miles · Petrol · Automatic</div>
-            <div class="vehicle-price">$95,000</div>
-            <a class="view-details" href="#">View Details →</a>
-          </div>
-        </div>
-        <div class="vehicle-card">
-          <img class="vehicle-image" src="Audi A4.jpeg" alt="Audi A6"/>
-          <div class="vehicle-details">
-            <div class="vehicle-title">Audi A6 3.5 <span class="vehicle-year">New</span></div>
-            <div class="vehicle-specs">100 Miles · Petrol · Automatic</div>
-            <div class="vehicle-price">$58,000</div>
-            <a class="view-details" href="#">View Details →</a>
-          </div>
-        </div>
-        <div class="vehicle-card">
-          <img class="vehicle-image" src="Toyota Corolla Altis.jpeg" alt="Corolla Altis"/>
-          <div class="vehicle-details">
-            <div class="vehicle-title">Corolla Altis <span class="vehicle-year">2023</span></div>
-            <div class="vehicle-specs">5000 Miles · Petrol · CVT</div>
-            <div class="vehicle-price">$45,000</div>
-            <a class="view-details" href="#">View Details →</a>
-          </div>
-        </div>
-        <div class="vehicle-card">
-          <span class="vehicle-label">Great Price</span>
-          <img class="vehicle-image" src="Ford Explorer.jpeg" alt="Ford Explorer"/>
-          <div class="vehicle-details">
-            <div class="vehicle-title">Ford Explorer <span class="vehicle-year">2023</span></div>
-            <div class="vehicle-specs">100 Miles · Diesel · Automatic</div>
-            <div class="vehicle-price">$35,000</div>
-            <a class="view-details" href="#">View Details →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- Vehicles Section -->
+    <section class="vehicles-section">
+        <div class="container">
+            <div class="vehicles-header">
+                <h2 class="section-title">Explore All Vehicles</h2>
+                <a class="view-all" href="#">View All →</a>
+            </div>
+            <div class="vehicle-tabs">
+                <button class="vehicle-tab active">In Stock</button>
+                <button class="vehicle-tab">New Cars</button>
+                <button class="vehicle-tab">Used Cars</button>
+            </div>
+            <div class="vehicles-grid">
+                <div class="vehicle-card">
+                    <span class="vehicle-label great-price">Great Price</span>
+                    <div class="bookmark-icon">
+                        <img class="bookmark" src="bookmark.png" alt="bookmark"/>
+                    </div>
+                    <img class="vehicle-image" src="Ford Transit.jpeg" alt="Ford Transit"/>
+                    <div class="vehicle-details">
+                        <div class="vehicle-title-section">
+                            <div class="vehicle-title">Ford Transit – 2021</div>
+                            <div class="vehicle-subtitle">4.0 D5 PowerPulse Momentum</div>
+                        </div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Icon.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">2500</div>
+                                <div class="spec-label">Mileage</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Vector.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Diesel</div>
+                                <div class="spec-label">Fuel</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="automation.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Manual</div>
+                                <div class="spec-label">Transmission</div>
+                            </div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">$22,000</div>
+                            <a class="view-details" href="#">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Sell Card Section -->
-  <section class="sell-section">
-    <div class="sell-card">
-      
-      <div class="sell-image-box">
-        <img src="Lamb.jpg" alt="Luxury car on mountain road" class="sell-image" />
-        <button class="play-button">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="white"/>
-          </svg>
-        </button>
-      </div>
+                <div class="vehicle-card">
+                    <span class="vehicle-label low-mileage">Low Mileage</span>
+                    <div class="bookmark-icon">
+                        <img class="bookmark" src="bookmark.png" alt="bookmark"/>
+                    </div>
+                    <img class="vehicle-image" src="AMG GT.jpeg" alt="New GLC"/>
+                    <div class="vehicle-details">
+                        <div class="vehicle-title-section">
+                            <div class="vehicle-title">New GLC – 2023</div>
+                            <div class="vehicle-subtitle">4.0 D5 PowerPulse Momentum </div>
+                        </div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Icon.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">50</div>
+                                <div class="spec-label">Mileage</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Vector.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Petrol</div>
+                                <div class="spec-label">Fuel</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="automation.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Automatic</div>
+                                <div class="spec-label">Transmission</div>
+                            </div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">$95,000</div>
+                            <a class="view-details" href="#">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="sell-text-box">
-        <h1>Get A Fair Price For Your Car<br>Sell To Us Today</h1>
-        <p class="sell-description">
-          We are committed to providing our customers with exceptional service, competitive pricing, and a wide range of:
-        </p>
-        <ul class="benefits-list">
-          <li><span class="dot"></span> We are the UK's largest provider, with more patrols in more places</li>
-          <li><span class="dot"></span> You get 24/7 roadside assistance</li>
-          <li><span class="dot"></span> We fix 4 out of 5 cars at the roadside</li>
-        </ul>
-        <button class="get-started-button">Get Started &rarr;</button>
-      </div>
+                <div class="vehicle-card">
+                    <div class="bookmark-icon">
+                        <img class="bookmark" src="bookmark.png" alt="bookmark"/>
+                    </div>
+                    <img class="vehicle-image" src="Audi A4.jpeg" alt="Audi A6"/>
+                    <div class="vehicle-details">
+                        <div class="vehicle-title-section">
+                            <div class="vehicle-title">Audi A6 3.5 – New</div>
+                            <div class="vehicle-subtitle">3.5 D5 PowerPulse Momentum</div>
+                        </div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Icon.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">100</div>
+                                <div class="spec-label">Mileage</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Vector.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Petrol</div>
+                                <div class="spec-label">Fuel</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="automation.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Automatic</div>
+                                <div class="spec-label">Transmission</div>
+                            </div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">$58,000</div>
+                            <a class="view-details" href="#">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
-  </section>
+                <div class="vehicle-card">
+                    <div class="bookmark-icon">
+                        <img class="bookmark" src="bookmark.png" alt="bookmark"/>
+                    </div>
+                    <img class="vehicle-image" src="Toyota Corolla Altis.jpeg" alt="Corolla Altis"/>
+                    <div class="vehicle-details">
+                        <div class="vehicle-title-section">
+                            <div class="vehicle-title">Corolla Altis – 2023</div>
+                            <div class="vehicle-subtitle">5000 Miles Petrol CVT Euro 6 (s/s)</div>
+                        </div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Icon.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">5000</div>
+                                <div class="spec-label">Mileage</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Vector.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Petrol</div>
+                                <div class="spec-label">Fuel</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="automation.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">CVT</div>
+                                <div class="spec-label">Transmission</div>
+                            </div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">$45,000</div>
+                            <a class="view-details" href="#">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="vehicle-card">
+                    <span class="vehicle-label great-price">Great Price</span>
+                    <div class="bookmark-icon">
+                        <img class="bookmark" src="bookmark.png" alt="bookmark"/>
+                    </div>
+                    <img class="vehicle-image" src="Ford Explorer.jpeg" alt="Ford Explorer"/>
+                    <div class="vehicle-details">
+                        <div class="vehicle-title-section">
+                            <div class="vehicle-title">Ford – 2023</div>
+                            <div class="vehicle-subtitle">100 Miles Diesel Automatic Euro 6 (s/s)</div>
+                        </div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Icon.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">100</div>
+                                <div class="spec-label">Mileage</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="Vector.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Diesel</div>
+                                <div class="spec-label">Fuel</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-icon">
+                                    <img class="fas fa-tachometer-alt" src="automation.png" alt="Icon"/>
+                                </div>
+                                <div class="spec-value">Automatic</div>
+                                <div class="spec-label">Transmission</div>
+                            </div>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">$35,000</div>
+                            <a class="view-details" href="#">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Sell Card Section -->
+    <section class="sell-section">
+        <div class="sell-card">
+            <div class="sell-image-box">
+                <video class="sell-video" id="carVideo" muted loop preload="auto" playsinline controls="false" disablePictureInPicture>
+                    <source src="car video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="play-button" id="playButton">
+                    <svg class="play-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="white"/>
+                    </svg>
+                    <svg class="pause-icon hidden" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <rect x="6" y="4" width="4" height="16" fill="white"/>
+                        <rect x="14" y="4" width="4" height="16" fill="white"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="sell-text-box">
+                <h1>Get A Fair Price For Your Car<br>Sell To Us Today</h1>
+                <p class="sell-description">
+                    We are committed to providing our customers with exceptional service, competitive pricing, and a wide range of:
+                </p>
+                <ul class="benefits-list">
+                    <li><span class="dot"></span> We are the UK's largest provider, with more patrols in more places</li>
+                    <li><span class="dot"></span> You get 24/7 roadside assistance</li>
+                    <li><span class="dot"></span> We fix 4 out of 5 cars at the roadside</li>
+                </ul>
+                <button class="get-started-button">Get Started →</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('carVideo');
+            const playButton = document.getElementById('playButton');
+            const playIcon = document.querySelector('.play-icon');
+            const pauseIcon = document.querySelector('.pause-icon');
+            
+            // Remove all default controls
+            video.removeAttribute('controls');
+            video.disablePictureInPicture = true;
+            video.controlsList = 'nodownload noremoteplayback';
+            
+            // Initialize button state
+            playButton.classList.add('paused');
+            
+            // Play/Pause button click handler
+            playButton.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play().then(() => {
+                        playIcon.classList.add('hidden');
+                        pauseIcon.classList.remove('hidden');
+                        playButton.classList.remove('paused');
+                        playButton.classList.add('playing');
+                    }).catch(error => {
+                        console.log('Error playing video:', error);
+                    });
+                } else {
+                    video.pause();
+                    playIcon.classList.remove('hidden');
+                    pauseIcon.classList.add('hidden');
+                    playButton.classList.remove('playing');
+                    playButton.classList.add('paused');
+                }
+            });
+            
+            // Reset to play icon when video ends
+            video.addEventListener('ended', function() {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                playButton.classList.remove('playing');
+                playButton.classList.add('paused');
+            });
+            
+            // Handle video pause event (e.g., if paused programmatically)
+            video.addEventListener('pause', function() {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                playButton.classList.remove('playing');
+                playButton.classList.add('paused');
+            });
+            
+            // Handle video play event (e.g., if played programmatically)
+            video.addEventListener('play', function() {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                playButton.classList.remove('paused');
+                playButton.classList.add('playing');
+            });
+            
+            // Prevent right-click context menu on video
+            video.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+            
+            // Disable keyboard controls
+            video.addEventListener('keydown', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
  <!-- Stats Section -->
 <section class="stats-section">
   <div class="container">
@@ -495,14 +734,6 @@
         <a href="#">Dacia Cars</a>
         <a href="#">DS Cars</a>
         <a href="#">Fiat Cars</a>
-      </div>
-      <div class="browse-column">
-        <a href="#">Land Rover Cars</a>
-        <a href="#">Lexus Cars</a>
-        <a href="#">Mercedes-Benz Cars</a>
-        <a href="#">Mazda Cars</a>
-        <a href="#">MG Cars</a>
-        <a href="#">Kia Cars</a>
       </div>
       <div class="browse-column">
         <a href="#">Abarth Cars</a>
@@ -698,22 +929,22 @@
       <div class="column app-links">
         <h4>Our Mobile App</h4>
         <div class="store-buttons">
-          <img src="apple store.png" alt="App Store" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" />
+          <img src="Apple store (2).png" alt="App Store" />
+          <img src="google play.png" alt="Google Play" />
         </div>
 <h4>Connect With Us</h4>
 <div class="social-icons">
   <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+    <img src="Facebook.png" alt="Facebook" />
   </a>
   <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
+    <img src="Twitter.png" alt="Twitter" />
   </a>
   <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+    <img src="Insta.png" alt="Instagram" />
   </a>
   <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" />
+    <img src="Linkedin.png" alt="LinkedIn" />
   </a>
 </div>
       </div>
