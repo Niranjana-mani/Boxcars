@@ -386,12 +386,13 @@ header {
 .vehicles-section {
     padding: 60px 0;
     background-color: #f9fafb;
+    
 }
 
 .vehicles-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content:space-between;
+    align-items: flex-start;
     margin-bottom: 30px;
 }
 
@@ -833,6 +834,7 @@ header {
   background: white;
   padding: 40px 0;
   margin-bottom: 30px;
+  align-content: flex-start;
 }
 
 .features-container {
@@ -1034,6 +1036,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  margin-left: 0px;
 }
 
 .view-more {
@@ -1085,153 +1088,202 @@ header {
 }
 
 /* Testimonials Section */
+.testimonials-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
 /* Header */
 .testimonials-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .section-title {
-  font-size: 30px;
-  font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
 }
 
 .rating-summary {
-  margin-top: 15px;
-  font-size: 12px;
-  color: #666;
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+    line-height: 1.4;
+    margin-right: 60px;
 }
 
 .rating-summary strong {
-  color: #111;
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
 /* Frame with arrows */
 .testimonial-frame {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    position: relative;
 }
 
 /* Arrows */
 .nav-arrow {
-  width: 20px;
-  height: 20px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  background-color: #fff;
-  cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.nav-arrow:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
 }
 
 /* Card */
 .testimonial-card {
-  display: flex;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 24px;
-  gap: 24px;
-  align-items: center;
-  max-width: 1000px;
-  width: 100%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 24px;
+    gap: 24px;
+    align-items: flex-start;
+    flex: 1;
+    min-height: auto;
 }
 
 /* Image */
+.testimonial-left {
+    flex-shrink: 0;
+}
+
 .testimonial-left img {
-  width: 200px;
-  height: 200px;
-  border-radius: 8px;
-  object-fit:cover;
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 /* Content */
 .testimonial-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonial-rating {
-  font-size: 14px;
-  color: #FFB800;
-  margin-bottom: 6px;
+  margin-top: 50px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    color: #FFB800;
+    margin-right: 8px;
 }
 
 .rating-badge {
-  background-color: #FFB800;
-  color: #fff;
-  font-size: 11px;
-  padding: 2px 6px;
-  border-radius: 5px;
-  margin-left: 6px;
+    background-color: #FFB800;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
 }
 
 .customer-name {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #333;
 }
 
 .customer-role {
-  font-size: 13px;
-  color: #888;
-  margin-bottom: 10px;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 16px;
 }
 
 .testimonial-text {
-  font-size: 14px;
-  color: #333;
-  line-height: 1.6;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .testimonials-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .testimonials-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
 
-  .testimonial-frame {
-    flex-direction: column;
-  }
+    .rating-summary {
+        text-align: left;
+    }
 
-  .testimonial-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
+    .testimonial-frame {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-  .testimonial-left img {
-    width: 180px;
-    height: 180px;
-  }
+    .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 30px;
+    }
 
-  .testimonial-right {
-    align-items: center;
-  }
+    .testimonial-left img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .testimonial-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .nav-arrow {
+        order: 2;
+    }
 }
 
-.blog-section, .cta-section {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
 
 /* Blog Header */
 .blog-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
   margin-bottom: 30px;
+  margin-left: 80px;
+  margin-right: 150px;
 }
 
 .blog-header h2 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
 }
 
@@ -1250,17 +1302,19 @@ header {
 /* Blog Cards */
 .blog-posts {
   display: flex;
-  gap: 20px;
   overflow-x: auto;
 }
 
 .blog-card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   min-width: 300px;
   max-width: 340px;
+  max-height: 300px;
+  margin-left: 80px;
+  margin-right: 40px;
   flex-shrink: 0;
 }
 
@@ -1281,7 +1335,7 @@ header {
   left: 15px;
   background: #fff;
   padding: 0px 10px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   border-radius: 4px;
 }
@@ -1293,13 +1347,13 @@ header {
 .blog-meta {
   display: flex;
   gap: 10px;
-  font-size: 10px;
+  font-size: 15px;
   color: #777;
   margin-bottom: 10px;
 }
 
 .blog-title {
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 500;
   color: #111;
   line-height: 1.4;
@@ -1308,7 +1362,7 @@ header {
 /* CTA Section */
 .cta-container {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   margin-top: 40px;
   flex-wrap: wrap;
 }
@@ -1316,11 +1370,15 @@ header {
 .cta-card {
   flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px;
   border-radius: 15px;
-  min-width: 300px;
+  min-width: 200px;
+  min-height: 393.72px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
 
 .cta-card.blue {
@@ -1333,17 +1391,19 @@ header {
 
 .cta-content {
   flex: 1;
-  max-width: 65%;
+  max-width: 75%;
 }
 
 .cta-content h3 {
-  font-size: 18px;
+  font-family: DM sans-serif;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .cta-content p {
-  font-size: 13px;
+  font-size: 15px;
+  font-family: DM sans-serif;
   margin-bottom: 15px;
   color: #555;
 }
@@ -1354,7 +1414,7 @@ header {
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1366,7 +1426,10 @@ header {
 }
 
 .cta-image img {
-  width: 60px;
+  width: 100px;
+  height: 100px;
+  top: 233.72px;
+  left:495px;
   height: auto;
 }
 
@@ -1492,11 +1555,17 @@ header {
 }
 
 .footer-bottom {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 13px;
   margin-top: 40px;
   border-top: 1px solid #222;
   padding-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
 }
 
 .footer-bottom a {
@@ -1533,6 +1602,10 @@ header {
   }
 
   .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     font-size: 12px;
+    text-align: center;
   }
 }
